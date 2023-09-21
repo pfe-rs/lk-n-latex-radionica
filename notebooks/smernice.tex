@@ -1,0 +1,228 @@
+% Velicina i tip stranice
+\documentclass[a4paper]{article}
+
+%% Dodatak za margine
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Dodaci za jezik
+\usepackage{hyphsubst}
+\usepackage{ucs}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[serbian]{babel}
+
+%% Korisni dodaci
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{esint}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{lmodern}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{multicol}
+\usepackage{csquotes}
+\usepackage{physics}
+
+% Označavanje figura
+\usepackage{caption}
+\captionsetup{justification=justified,
+   format=plain,font=small,labelfont=sc,margin=50pt}
+
+% Formatiranje
+\setstretch{1.2}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+
+\title{Interaktivni uvod u \LaTeX}
+\author{Filip Parag}
+
+\begin{document}
+
+\maketitle
+
+\section*{Sadržaj}
+
+\begin{enumerate}
+   \item Dokument
+   \item Naslovi
+   \item Teskt i pasusi
+   \item Matematika
+   \item Figure
+   \item Tabele
+   \item Liste
+   \item Kod
+\end{enumerate}
+
+\pagebreak
+
+\section*{Dokument}
+
+\begin{minted}{latex}
+   \title{Interaktivni uvod u \LaTeX}
+   \author{
+      Filip Parag\\Naučno-inženjerski centar \enquote{PFE}
+      \and
+      Petar Petrović\\Član naše mašte
+   }
+
+   \maketitle
+   \tableofcontents
+\end{minted}
+
+\pagebreak
+
+\section*{Naslovi}
+
+\begin{minted}{latex}
+  \section[Skraćeni naziv]{Odeljak sa indeksom}
+  \subsection{Pododeljak sa indeksom}
+  \subsubsection{Pododeljak sa indeksom}
+
+  \section*{Odeljak bez indeksa} \label{labela_naslova}
+\end{minted}
+
+\pagebreak
+
+\section*{Tekst i pasusi}
+
+\begin{minted}{latex}
+   \lipsum[1]
+   \lipsum[1]
+
+   \lipsum[1] \\
+   \lipsum[1]
+
+   \footnote{Fusnota}
+   \marginpar{Tekst unutar margine}
+\end{minted}
+
+\begin{minted}{latex}
+   \textbf{Podebljan tekst}
+   \textit{Italiciziran tekst}
+   \texttt{Blokovski tekst}
+   \underline{Podvučen tekst}
+   \enquote{Navođen tekst}
+   \(Matematički izraz\)
+   \ref{labela}
+\end{minted}
+
+\pagebreak
+
+\section*{Matematika}
+
+\begin{minted}{latex}
+   % Jednačina
+   \begin{equation}
+      \nabla \cross \mathbf{E} = - \frac{1}{c} \frac{\partial\mathbf{B}}{\partial t}
+      \label{eq:faradej}
+   \end{equation}
+
+   % Sistem jednačina
+   \begin{alignat*}{5}
+      \dot{x_1} & ={} & 2 x_1 & {} & {} & {}-{} & 2 x_3 \\
+      \dot{x_2} & ={} & {} & {} & x_2 & {}+{} & 5 x_3 \\
+      \dot{x_3} & ={} & x_1 & {}+{} & x_2 & {}+{} & x_3
+    \end{alignat*}
+
+   % Matrica
+   \[
+      A = \left[ \begin{matrix}
+         2  &  0 & -2 \\
+         0  &  1 &  5 \\
+         1  &  1 &  1
+      \end{matrix} \right]
+   \]
+\end{minted}
+
+\pagebreak
+
+\section*{Figure}
+
+\begin{minted}{latex}
+   % h - postavi otprilike ovde
+   % t - postavi na vrh stranice
+   % b - postavi na dno stranice
+   % p - postavi na zasebnu stranicu za figure
+   \begin{figure}[h]
+      \includegraphics[height=8cm,width=5cm,keepaspectratio]{./slika.png}
+      \centering
+      \caption{Matematičko klatno}
+      \label{im:idealnoklatno}
+   \end{figure}
+\end{minted}
+
+\pagebreak
+
+\section*{Tabele}
+
+\begin{minted}{latex}
+   \begin{table}[]
+      \centering
+      % l - Poravnavanje levo
+      % c - Poravnavanje u sredini
+      % r - Poravnavanje desno
+      % | - vertikalna podela
+      % \hline - horizontalna podela
+      \begin{tabular}{@{}cc@{}}
+      \toprule
+         Godina & Prinosi \\ \midrule
+         2019   & 28.9\%  \\ \hline
+         2020   & 16.3\%  \\
+         2021   & 26.9\%  \\
+         2022   & -19.4\% \\
+         2023   & 14.7\%  \\ \bottomrule
+      \end{tabular}
+      \caption{Godišnji prinosi indeksa S\&P 500}
+      \label{tab:sp500}
+   \end{table}
+\end{minted}
+
+\pagebreak
+
+\section*{Liste}
+
+\begin{minted}{latex}
+   \begin{itemize}
+      \item Lemilica
+      \item Multimetar
+      \item Osciloskop
+   \end{itemize}
+
+   \begin{enumerate}[label=\alph*)]
+      \item Doručak
+      \item Ručak
+      \item Večera
+   \end{enumerate}
+\end{minted}
+
+\section*{Kod}
+
+\begin{listing}
+   \begin{minted}{cpp}
+      #define DELAY 500
+      void loop() {
+         digitalWrite(2, HIGH);
+         delay(DELAY);
+         digitalWrite(2, LOW);
+         delay(DELAY);
+      }
+   \end{minted}
+   \label{ls:arduino}
+   \caption{Primer Arduino koda za kontrolu LED}
+\end{listing}
+
+
+\end{document}

@@ -1,0 +1,10 @@
+**
+**/*!.gitignore
+!LICENSE
+!packages.txt
+!requirements.txt
+!notebooks/
+!**/**.tex
+!**/**.ipynb
+!**/**.png
+!**/**.jpg

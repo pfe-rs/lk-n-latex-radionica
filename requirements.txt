@@ -2,4 +2,5 @@ nbconvert
 jupyterlab_latex
 numpy
 matplotlip
+pygments
 scipy

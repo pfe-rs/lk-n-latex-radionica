@@ -1,4 +1,6 @@
 pandoc
+git
+git-lfs
 texlive-base
 texlive-bibtex-extra
 texlive-binaries
