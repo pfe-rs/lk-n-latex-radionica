@@ -1,26 +1,4 @@
-% Velicina i tip stranice
-\documentclass[a4paper]{article}
-
-%% Dodaci za jezik
-\usepackage{ucs}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[serbian]{babel}
-
-%% Dodatak za margine
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-
-% Definisana komanda za stepen
-\newcommand{\degree}{\ensuremath{^\circ}}
-
-%% Korisni dodaci za matematiku i crtanje
-\usepackage{amsmath}
-\usepackage{graphicx}
-
-% Označavanje figura
-\usepackage{caption}
-\captionsetup{justification=justified,
-   format=plain,font=small,labelfont=sc,margin=50pt}
+\input{../dataset/izvestaj.tex}
 
 \title{Određivanje ubrzanja zemljine teže matematičkim klatnom}
 \author{Petar Petrović}
@@ -37,7 +15,7 @@ Kretanje matematičkog klatna se vrši po krugu poluprečnika $l$, gde je $l$ du
 
 \begin{center}
     \label{im:idealnoklatno}
-    \includegraphics[height=8cm,keepaspectratio]{mat_klatno.png}
+    \includegraphics[height=8cm,keepaspectratio]{klatno.png}
     \captionof{figure}{Matematičko klatno}
 \end{center}
 

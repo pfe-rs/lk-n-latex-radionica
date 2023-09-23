@@ -1,50 +1,4 @@
-% Velicina i tip stranice
-\documentclass[a4paper]{article}
-
-%% Dodatak za margine
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-
-%% Dodaci za jezik
-\usepackage{hyphsubst}
-\usepackage{ucs}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[serbian]{babel}
-
-%% Korisni dodaci
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{booktabs}
-\usepackage{enumerate}
-\usepackage{enumitem}
-\usepackage{esint}
-\usepackage{gensymb}
-\usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
-\usepackage{listings}
-\usepackage{lipsum}
-\usepackage{setspace}
-\usepackage{lmodern}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage{minted}
-\usepackage{multicol}
-\usepackage{multicol}
-\usepackage{csquotes}
-\usepackage{physics}
-
-% Označavanje figura
-\usepackage{caption}
-\captionsetup{justification=justified,
-   format=plain,font=small,labelfont=sc,margin=50pt}
-
-% Formatiranje
-\setstretch{1.2}
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0em}
-\setlength{\abovedisplayskip}{0pt}
-\setlength{\belowdisplayskip}{0pt}
+\input{./izvestaj.tex}
 
 \title{Interaktivni uvod u \LaTeX}
 \author{Filip Parag}
@@ -208,9 +162,11 @@
    \end{enumerate}
 \end{minted}
 
+\pagebreak
+
 \section*{Kod}
 
-\begin{listing}
+\begin{listing}[h]
    \begin{minted}{cpp}
       #define DELAY 500
       void loop() {
